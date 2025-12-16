@@ -1,0 +1,77 @@
+version: 2
+
+sources:
+  - name: oracle_raw
+    description: Raw data from Oracle database loaded via Azure Data Factory
+    database: ORACLE_MIGRATION
+    schema: STAGING
+    tables:
+      - name: CUSTOMERS
+        description: Customer dimension table from Oracle
+        columns:
+          - name: CUST_ID
+            description: Primary key - Customer ID
+            tests:
+              - unique
+              - not_null
+
+      - name: PRODUCTS
+        description: Product dimension table from Oracle
+        columns:
+          - name: PROD_ID
+            description: Primary key - Product ID
+            tests:
+              - unique
+              - not_null
+
+      - name: SALES
+        description: Sales fact table from Oracle
+        columns:
+          - name: PROD_ID
+            description: Foreign key to products
+          - name: CUST_ID
+            description: Foreign key to customers
+          - name: TIME_ID
+            description: Transaction date
+          - name: AMOUNT_SOLD
+            description: Sale amount
+            tests:
+              - not_null
+
+      - name: CHANNELS
+        description: Sales channel dimension
+        columns:
+          - name: CHANNEL_ID
+            description: Primary key - Channel ID
+
+      - name: COUNTRIES
+        description: Country dimension
+        columns:
+          - name: COUNTRY_ID
+            description: Primary key - Country ID
+
+      - name: TIMES
+        description: Time/date dimension
+        columns:
+          - name: TIME_ID
+            description: Primary key - Date
+
+      - name: PROMOTIONS
+        description: Promotion dimension
+        columns:
+          - name: PROMO_ID
+            description: Primary key - Promotion ID
+
+      - name: COSTS
+        description: Cost fact table
+        columns:
+          - name: PROD_ID
+            description: Product ID
+          - name: TIME_ID
+            description: Date
+
+      - name: SUPPLEMENTARY_DEMOGRAPHICS
+        description: Additional customer demographic information
+        columns:
+          - name: CUST_ID
+            description: Foreign key to customers
