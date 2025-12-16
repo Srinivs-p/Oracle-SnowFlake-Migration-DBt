@@ -360,7 +360,7 @@ This project is available for educational and portfolio purposes.
 **Author**: Srinivas Perumandla
 **LinkedIn**: https://www.linkedin.com/in/srinivs-p
 **GitHub**:  https://github.com/Srinivs-p
-**Email**: srinivas.dvp1@gmail.com 
+**Email**: *********@****.com 
 
 ---
 
