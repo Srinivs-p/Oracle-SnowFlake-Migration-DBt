@@ -1,0 +1,149 @@
+# ===============================================
+# Git Ignore for Oracle-Snowflake-dbt Project
+# ===============================================
+
+# ===============================================
+# SENSITIVE DATA - NEVER COMMIT THESE!
+# ===============================================
+# Environment variables and credentials
+.env
+.env.local
+.env.*.local
+*.env
+
+# dbt profiles (contains credentials)
+oracle_snowflake_dbt/.env
+oracle_snowflake_dbt/profiles.yml
+
+# Azure/Snowflake credentials
+**/credentials.json
+**/secrets.json
+**/*credentials*
+**/*secrets*
+
+# ===============================================
+# dbt Specific
+# ===============================================
+# dbt artifacts
+oracle_snowflake_dbt/target/
+oracle_snowflake_dbt/dbt_packages/
+oracle_snowflake_dbt/logs/
+oracle_snowflake_dbt/dbt_modules/
+
+# dbt internal
+oracle_snowflake_dbt/manifest.json
+oracle_snowflake_dbt/run_results.json
+oracle_snowflake_dbt/catalog.json
+
+# ===============================================
+# Python
+# ===============================================
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===============================================
+# IDEs and Editors
+# ===============================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ===============================================
+# Operating System
+# ===============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ===============================================
+# Logs and Databases
+# ===============================================
+*.log
+*.sql.log
+*.sqlite
+*.db
+
+# ===============================================
+# Temporary Files
+# ===============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.cache
+
+# ===============================================
+# Azure Data Factory
+# ===============================================
+# Local ADF configurations (if any)
+**/integrationRuntime/
+**/pipeline/*.json.adf_publish
+
+# ===============================================
+# Documentation Build
+# ===============================================
+site/
+docs/_build/
+
+# ===============================================
+# SAFE TO COMMIT
+# ===============================================
+# These should be committed:
+# - dbt_project.yml
+# - All .sql model files
+# - schema.yml files
+# - Documentation markdown files
+# - README.md
+# - .gitignore itself
+# - Sample/template files (*.template, *.example)
